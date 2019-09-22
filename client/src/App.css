@@ -1,0 +1,46 @@
+.header {
+  border: 1px solid red;
+}
+
+.jumbotron {
+  border: 1px solid blue;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.books-container {
+  border: 1px solid violet;
+}
+
+.book-component {
+  border: 1px dotted red;
+}
+
+.header-btn {
+  float: right;
+  margin-top: 12px;
+  margin-right: 8px;
+}
+
+.book-details {
+  margin: 0 auto;
+  font-size: 22px;
+}
+
+.book-description {
+  margin-top: 2em;
+}
+
+.row {
+  border-top: 1 px solid red;
+}
+
+ul {
+  margin-top: 12px;
+  list-style: none;
+}
+
+li {
+  display: inline;
+  margin-right: 15px;
+}
