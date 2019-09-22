@@ -10,10 +10,12 @@
 
 .books-container {
   border: 1px solid violet;
+  margin-bottom: 15px;
 }
 
 .book-component {
   border: 1px dotted red;
+  margin-bottom: 10px;
 }
 
 .header-btn {

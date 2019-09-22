@@ -18,30 +18,57 @@ const BookImage = styled.img`
     border-color: red;
   }
 `;
+
+const NavLink = styled.li`
+  display: inline;
+  cursor: pointer;
+  :hover {
+    color: red;
+  }
+`;
 // End Styled Components
 
-// List Components for map through database
-// Not implementable yet, use later when restructuring
-const List = styled.ul`
-  list-style: none;
-  padding-left: 0;
-`;
+//// List Components for map through database
+//// Not implementable yet, use later when restructuring
+// const List = styled.ul`
+//   list-style: none;
+//   padding-left: 0;
+// `;
 
-const ListItem = stled.li`
-  margin-bottom: 1 em;
-`;
-// End List Components
+// const ListItem = styled.li`
+//   margin-bottom: 1 em;
+// `;
+//// End List Components
 
 class App extends Component {
+  state = {
+    saved: [],
+    searchTerm: ""
+  };
+
+  componentDidMount() {
+    console.log("component mounted");
+  }
+
+  // Methods
+  onClick = event => {
+    console.log("event:", event);
+  };
+  // End Methods
   render() {
     return (
       <div className="App">
         <Row>
           <Col className="header">
+            {/* These methods below are loading before the component mounts */}
             <ul>
-              <li>Google Books</li>
-              <li>Saved</li>
-              <li>Search</li>
+              <NavLink onClick={this.onClick("www.google.com")}>
+                Google Books
+              </NavLink>
+              <NavLink onClick={this.onClick("www.twitch.tv")}>Saved</NavLink>
+              <NavLink onClick={this.onClick("www.youtube.com")}>
+                Search
+              </NavLink>
             </ul>
           </Col>
         </Row>
