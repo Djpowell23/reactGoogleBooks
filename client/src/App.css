@@ -46,3 +46,31 @@ li {
   display: inline;
   margin-right: 15px;
 }
+
+.page-title {
+  font-size: 62px;
+  font-family: "Tusj";
+  text-align: right;
+  margin-right: 25px;
+}
+
+.hero-image {
+  grid-area: hero;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-height: 300px;
+}
+
+.container-fluid {
+  grid-area: search;
+}
+
+div.col {
+  text-align: center;
+}
+
+@font-face {
+  font-family: "Tusj";
+  src: local("Tusj"), url(./fonts/FFF_Tusj.ttf) format("truetype");
+}
