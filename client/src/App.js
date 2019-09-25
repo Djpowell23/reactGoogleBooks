@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Pages
-import Articles from "./pages/Articles";
+import Books from "./pages/Books";
 import NoMatch from "./pages/NoMatch";
 // End Pages
 
@@ -37,8 +37,8 @@ class App extends Component {
           <NavBar />
           <Hero />
           <Switch>
-            <Route exact path="/" component={Articles} />
-            <Route exact path="/articles" component={Articles} />
+            <Route exact path="/" component={Books} />
+            <Route exact path="/books" component={Books} />
             <Route component={NoMatch} />
           </Switch>
         </div>

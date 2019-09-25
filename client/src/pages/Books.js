@@ -12,17 +12,47 @@ import {
   Button
 } from "reactstrap";
 
-class Articles extends Component {
-  state = {};
+class Books extends Component {
+  state = {
+    searches: [],
+    query: {
+      q: ""
+    },
+    articles: []
+  };
 
   //   Methods
+  componentDidMount() {
+    this.loadBooks();
+    console.log("Books state:", this.state);
+  }
+
   handleClick = event => {
     event.preventDefault();
     console.log("Event.target:", event.target);
   };
+
+  findBooks = term => {
+    API.searchBooks(term)
+      .then(res => this.setState({ searches: res.data.response.docs }))
+      .catch(err => console.log(err));
+  };
+
+  loadBooks = () => {
+    API.getBooks()
+      .then(res => this.setState({ articles: res.data }))
+      .catch(err => console.log(err));
+  };
+
+  deleteBook = id => {
+    API.deleteBook(id)
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
+  };
   // End Methods
 
   render() {
+    // console.log("Books state:", this.state);
     return (
       <Container fluid>
         <Row>
@@ -32,8 +62,8 @@ class Articles extends Component {
               <FormGroup>
                 <Input
                   onChange={this.onChange}
-                  name="book-search"
-                  placeholder="Book Title"
+                  name="q"
+                  placeholder="Book Title (required)"
                   className="search-input"
                 />
               </FormGroup>
@@ -55,4 +85,4 @@ class Articles extends Component {
   }
 }
 
-export default Articles;
+export default Books;
