@@ -13,11 +13,11 @@ export default {
     return axios.remove("/api/books/" + id);
   },
   searchBooks: function(term) {
-    const q = term.join(" ", "+");
-    console.log("q:", q);
+    // const q = term.join(" ", "+");
+    // console.log("q:", q);
     return axios.get(
       "https://www.googleapis.com/books/v1/volumes?q=" +
-        q +
+        term +
         "+" +
         "&key=" +
         apiKey
